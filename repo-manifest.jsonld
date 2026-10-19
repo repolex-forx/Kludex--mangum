@@ -8,7 +8,8 @@
     {
       "@id": "https://repolex.ai/r/Kludex/mangum/commit/c5b20b878543fa0e54c134d899b2d85f92b55374",
       "git:hexsha": "c5b20b878543fa0e54c134d899b2d85f92b55374",
-      "repolex:parseStatus": "ast_complete"
+      "repolex:parseStatus": "parsed",
+      "repolex:parsedAt": "2026-10-19T13:37:26.901352+00:00"
     },
     {
       "@id": "https://repolex.ai/r/Kludex/mangum/commit/1315d686fd849788fc9e5f4ddbc8ff6b8383fa8f",
