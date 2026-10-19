@@ -1,1 +1,128 @@
-Initializing
+# Repolex Knowledge Graph of Kludex/mangum
+
+RDF knowledge graph data for [Kludex/mangum](https://github.com/Kludex/mangum), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download Kludex/mangum
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── c5b20b878543fa0e54c134d899b2d85f92b55374
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── c5b20b878543fa0e54c134d899b2d85f92b55374
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 04b179efd8615c0a165758b43b2fe7e50193b113.nq.gz
+│   ├── 0ad760a1b8df75e4ffc92373641afc4708bf3c8a.nq.gz
+│   ├── 0ecd3bd0170c130b153472ee835af4da83837258.nq.gz
+│   ├── 12571c3ead82860a9112ef6596a1881e3dc61bae.nq.gz
+│   ├── 141731f5739d1f98cc8700a02216382bb20224ea.nq.gz
+│   ├── 1742ebd257d04b8e6c347e840d5ee84e52acd292.nq.gz
+│   ├── 1e495c82255f1b292d2163d6b3161f95984f3600.nq.gz
+│   ├── 1fd43771a5a8c8298660aab10d4308e3eebe4fd5.nq.gz
+│   ├── 2597c165b7a8ce3515399734d2b0e33374df1488.nq.gz
+│   ├── 33797fcc82fbb9f76a05779eb51000809d9fca87.nq.gz
+│   ├── 3510ac1f4e081d3753313c38112fd9d0a3f9f6e2.nq.gz
+│   ├── 375981c4ee7bd558351be0356364df8078b28be6.nq.gz
+│   ├── 3e5f2bc893670a994f819699b50803e5a08d9a39.nq.gz
+│   ├── 4510791faefbba8047fc48b40644ee9aee7f27c0.nq.gz
+│   ├── 4893391423c8e49600969fcfc43c1fda9c249f05.nq.gz
+│   ├── 4bef0d81501d605020ab3e32c4aaac8a2e2c721a.nq.gz
+│   ├── 516da259cf1702e7428c92eb20965e184593457f.nq.gz
+│   ├── 552d769c2279d0dfa66e7f67612f5cbd9b98b519.nq.gz
+│   ├── 55409d4ffeb8c89ed01b6599fd24fd487d1ed039.nq.gz
+│   ├── 563750ac5c0f1db81e05c394a81febf60ed8c556.nq.gz
+│   ├── 5afca3c9b430c05dd6f58ac493a0b8ba6ecf872d.nq.gz
+│   ├── 6168adbcb82985463d4a0490b5f72455b84c3181.nq.gz
+│   ├── 71c685b2f9ba17870899b19896066b54b3a75fe9.nq.gz
+│   ├── 728b4349a09a0d3df3003b603505d1d6c8f86fcf.nq.gz
+│   ├── 7c8638fe49d8c04881e3a6e85ea9df04be8a7e8d.nq.gz
+│   ├── 885350df25286bd0545648a48be4fe193b746820.nq.gz
+│   ├── 8edbb80303c4c51116f2fb201bbb303ba6fe6fdc.nq.gz
+│   ├── 975db844b0df3c80ee51b54f5892d4150f139646.nq.gz
+│   ├── 9a401e3f7769c7fd1f7f95cd807102c609fc3e0e.nq.gz
+│   ├── 9efe82543c2982f79500d03a50fb146c69993269.nq.gz
+│   ├── a4d3a80b174d87ef3a20ad5587114a4888028343.nq.gz
+│   ├── a801fbd91c43b26ca50e3aacdb08b78ef91d617b.nq.gz
+│   ├── af618c8017b4f08931cc045ced742e82bc6e7cf7.nq.gz
+│   ├── b855770da5e2c4ed9bdaad02189fac6eb95496fb.nq.gz
+│   ├── b976898a5e599af8cb93f33f143056fc695cfbe8.nq.gz
+│   ├── b9eb5d0c46b323948bc0de3a49755f2d19ad4981.nq.gz
+│   ├── bf6e2eedf86f3e952011b24e46c203b0d77ad609.nq.gz
+│   ├── c4277a945e4576ad2d770df75bf090142248141b.nq.gz
+│   ├── d102b75f8221c4d39a171e2b503d7b472985bdbe.nq.gz
+│   ├── d14234c9da0fe740fd12fb15e3d74c53fa9d7c09.nq.gz
+│   ├── d2bdaf05b735f1f87ed26ad4d63306f98467c2a8.nq.gz
+│   ├── d4bbc64b152e9f4f0b6fb14e84a3998ee34b50c2.nq.gz
+│   ├── d6b0817a18bfceefcc61812d3718f44234e76709.nq.gz
+│   ├── def12a59aa0efda5462f431b7ff5d2ac25282735.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── f0b50e5e4da25eea2ccf6ab21467d37092ecefda.nq.gz
+│   ├── f2a3b9561fd5b1ceac5e015f1491a922d3e3b826.nq.gz
+│   ├── f4e9e68b46ff1230f5d8fc9ccb3bb60bf7a44c05.nq.gz
+│   └── fa5058b876d8a08e23ec1c670ad3dc667b29a242.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── c5b20b878543fa0e54c134d899b2d85f92b55374.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 57 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[Kludex/mangum](https://github.com/Kludex/mangum)
+
+---
+*Parsed on 2026-10-19 by [repolex](https://repolex.ai)*
